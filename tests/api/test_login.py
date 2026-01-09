@@ -1,19 +1,17 @@
 import requests
 
 def test_login_page():
-    url = "https://cognitos.vercel.app/signin"
+    url = "https://cognito-05vd.onrender.com/api/v1/user/signin"
     payload = {
-        "username": "test@test.com",
-        "password": "213fdfs2"
+        "username": "test33",
+        "password": "213Fdfs2"
     }
 
     response = requests.post(url, json=payload)
     
-
-    print(response)
-
-test_login_page()
-
+        
+    assert response.status_code == 200 
+    assert "token" in response
 
 
 
